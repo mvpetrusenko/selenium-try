@@ -1,7 +1,6 @@
 package org.example;
 
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -9,6 +8,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 
 public class SignIn {
@@ -36,7 +37,7 @@ public class SignIn {
         // WebElement is like a type of the variable
         // usernameTextField is like a variable
         // clear() to clear if other email address was in the text field before
-        WebDriverWait wait = new WebDriverWait(driver, 300);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@type=\"email\"]")));
         WebElement usernameTextField = driver.findElement(By.xpath("//*[@type=\"email\"]"));
         usernameTextField.clear();
